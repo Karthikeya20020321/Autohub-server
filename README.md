@@ -1,22 +1,25 @@
 # 🚗 AutoHub – Backend API
 
-Backend REST API for the AutoHub car e-commerce platform.
+The backend REST API for **AutoHub**, a full-stack car e-commerce platform.
 
-Built with Node.js, Express.js, MongoDB, and JWT authentication.
+Built with Node.js, Express.js, MongoDB, Mongoose, and JWT authentication.
 
-## 🌐 Live Application
+## 🌐 Live Project
 
-👉 **[Visit AutoHub](https://rococo-kulfi-28d0b6.netlify.app/)**
+### 👉 [🚗 Visit AutoHub](https://rococo-kulfi-28d0b6.netlify.app/)
 
 ## 🔗 Backend API
 
-👉 **[AutoHub Backend](https://autohub-server-woz6.onrender.com)**
+### 👉 [⚙️ AutoHub Backend API](https://autohub-server-woz6.onrender.com)
 
-## 💻 Frontend Repository
+## 💻 GitHub Repositories
 
-https://github.com/Karthikeya20020321/Autohub-client
+* **Frontend:** [AutoHub Client](https://github.com/Karthikeya20020321/Autohub-client)
+* **Backend:** [AutoHub Server](https://github.com/Karthikeya20020321/Autohub-server)
 
-## 🛠️ Tech Stack
+---
+
+## 🛠️ Technologies Used
 
 * Node.js
 * Express.js
@@ -24,68 +27,162 @@ https://github.com/Karthikeya20020321/Autohub-client
 * Mongoose
 * JWT
 * bcryptjs
+* Axios API integration
 * Express Validator
 * CORS
 * dotenv
+* Nodemon
+
+---
 
 ## ✨ Backend Features
 
-* User registration
-* User login
-* JWT authentication
-* Protected routes
-* User profile
-* Car management
-* Car listings
-* Car booking
-* Wishlist functionality
-* Seller functionality
-* MongoDB database integration
-* RESTful API architecture
-* Input validation
+* 🔐 User Registration
+* 🔑 User Login
+* 🛡️ JWT Authentication
+* 👤 User Profile
+* 🚗 Car Management
+* 🔎 Car Listings
+* 📄 Car Details
+* ❤️ Wishlist
+* 📅 Car Booking
+* 🏷️ Sell Car
+* 🔒 Protected Routes
+* ✅ Request Validation
+* 💾 MongoDB Database Integration
+* 🌐 RESTful API
+* ☁️ Cloud Deployment
 
-## 🏗️ Architecture
+---
+
+## 🏗️ Application Architecture
 
 ```text
-React Frontend
-      ↓
-REST API
-      ↓
-Node.js + Express
-      ↓
-MongoDB Atlas
+                 ┌──────────────────────┐
+                 │     React + Vite     │
+                 │      Frontend        │
+                 │       Netlify        │
+                 └──────────┬───────────┘
+                            │
+                            │ REST API
+                            ▼
+                 ┌──────────────────────┐
+                 │   Node.js + Express  │
+                 │       Backend        │
+                 │       Render         │
+                 └──────────┬───────────┘
+                            │
+                            │ Mongoose
+                            ▼
+                 ┌──────────────────────┐
+                 │    MongoDB Atlas     │
+                 │       Database       │
+                 └──────────────────────┘
 ```
 
-## 🚀 Deployment
+---
 
-| Service  | Platform      |
-| -------- | ------------- |
-| Frontend | Netlify       |
-| Backend  | Render        |
-| Database | MongoDB Atlas |
-
-## 📁 Backend Structure
+## 📁 Project Structure
 
 ```text
 server
+│
 ├── config
+│   └── db.js
+│
 ├── controllers
+│   ├── authController.js
+│   └── ...
+│
 ├── middleware
+│   └── authMiddleware.js
+│
 ├── models
+│   ├── User.js
+│   └── ...
+│
 ├── routes
+│   ├── authRoutes.js
+│   └── ...
+│
 ├── services
+│   └── ...
+│
 ├── scripts
+│   └── createAdmin.js
+│
 ├── utils
+│   └── ...
+│
 ├── validators
-├── .env
+│   └── ...
+│
 ├── .env.example
+├── .gitignore
 ├── package.json
+├── package-lock.json
 └── server.js
 ```
 
+---
+
+## 🔐 Authentication
+
+AutoHub uses **JWT-based authentication**.
+
+### Authentication Flow
+
+```text
+User
+ ↓
+Register / Login
+ ↓
+Backend validates credentials
+ ↓
+JWT token generated
+ ↓
+Token stored by frontend
+ ↓
+Token sent with protected API requests
+ ↓
+Backend verifies JWT
+ ↓
+Authorized request
+```
+
+Passwords are securely hashed using **bcryptjs** before being stored.
+
+---
+
+## 🗄️ Database
+
+AutoHub uses **MongoDB Atlas** as the cloud database.
+
+MongoDB is connected to the Express server using **Mongoose**.
+
+The application stores information such as:
+
+* Users
+* Cars
+* Bookings
+* Wishlist data
+* Seller information
+
+---
+
+## 🌐 API Server
+
+Production backend:
+
+**https://autohub-server-woz6.onrender.com**
+
+The frontend communicates with the backend using REST API requests.
+
+---
+
 ## 🔐 Environment Variables
 
-Create a `.env` file locally:
+Create a `.env` file in the server directory:
 
 ```text
 PORT=5000
@@ -94,27 +191,102 @@ JWT_SECRET=your_jwt_secret
 CLIENT_URL=your_frontend_url
 ```
 
-Never commit real credentials or secrets to GitHub.
+⚠️ **Never commit `.env` to GitHub.**
+
+Do not expose:
+
+* MongoDB connection strings
+* Database passwords
+* JWT secrets
+* Admin passwords
+* API keys
+
+Use `.env.example` for safe configuration documentation.
+
+---
 
 ## ▶️ Run Locally
 
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Karthikeya20020321/Autohub-server.git
+```
+
+### 2. Enter the project
+
+```bash
+cd Autohub-server
+```
+
+### 3. Install dependencies
+
 ```bash
 npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file and add your MongoDB and JWT configuration.
+
+### 5. Start the development server
+
+```bash
 npm run dev
 ```
 
-The server runs locally on:
+The backend will run on:
 
 ```text
 http://localhost:5000
 ```
 
-## 🎯 Project Goal
+---
 
-AutoHub demonstrates practical full-stack development skills including REST API development, authentication, database integration, protected routes, and cloud deployment.
+## 🚀 Production Deployment
+
+| Component | Platform      |
+| --------- | ------------- |
+| Frontend  | Netlify       |
+| Backend   | Render        |
+| Database  | MongoDB Atlas |
+
+### Production URLs
+
+**Frontend**
+
+https://rococo-kulfi-28d0b6.netlify.app/
+
+**Backend**
+
+https://autohub-server-woz6.onrender.com
+
+---
+
+## 🎯 Project Highlights
+
+* Developed a complete RESTful backend for a car e-commerce platform.
+* Implemented JWT-based authentication and protected routes.
+* Integrated MongoDB Atlas using Mongoose.
+* Implemented secure password hashing with bcryptjs.
+* Built API endpoints for cars, users, bookings, and wishlist functionality.
+* Added request validation using Express Validator.
+* Configured CORS for frontend-backend communication.
+* Deployed the backend API using Render.
+* Connected the production backend with the React frontend hosted on Netlify.
+
+---
 
 ## 👨‍💻 Developer
 
 **Karthik Reddy**
 
 Full Stack Developer
+
+### 🔗 Project Links
+
+**🚗 Live AutoHub Project**
+https://rococo-kulfi-28d0b6.netlify.app/
+
+**💻 Frontend Repository**
+https:
