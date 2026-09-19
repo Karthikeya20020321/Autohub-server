@@ -6,9 +6,7 @@ Built with Node.js, Express.js, MongoDB, Mongoose, and JWT authentication.
 
 ## 🌐 Live Project
 
-### 👉 [🚗 Visit AutoHub](
-
-https://6aae71a1699140f1b8a808ff--autohub-28d0b6.netlify.app/)
+### 👉 [🚗 Visit AutoHub](https://6aae71a1699140f1b8a808ff--autohub-28d0b6.netlify.app/)
 
 ## 🔗 Backend API
 
@@ -288,8 +286,6 @@ Full Stack Developer
 ### 🔗 Project Links
 
 **🚗 Live AutoHub Project**
-
-
 https://6aae71a1699140f1b8a808ff--autohub-28d0b6.netlify.app/
 
 **💻 Frontend Repository**
